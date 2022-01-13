@@ -1,0 +1,15 @@
+{
+    "name": "bluhm/ba_twig",
+    "autoload": {
+        "psr-4": {
+            "Bluhm\\BaTwig\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Johannes",
+            "email": "johannes.bluhm@outlook.com"
+        }
+    ],
+    "require": {}
+}

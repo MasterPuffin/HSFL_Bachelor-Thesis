@@ -1,0 +1,15 @@
+{
+    "name": "bluhm/ba_blade",
+    "autoload": {
+        "psr-4": {
+            "Bluhm\\BaBlade\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Johannes",
+            "email": "johannes.bluhm@outlook.com"
+        }
+    ],
+    "require": {}
+}

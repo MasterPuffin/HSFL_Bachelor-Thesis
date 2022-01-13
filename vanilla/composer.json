@@ -1,0 +1,15 @@
+{
+    "name": "bluhm/ba_vanilla",
+    "autoload": {
+        "psr-4": {
+            "Bluhm\\BaVanilla\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Johannes",
+            "email": "johannes.bluhm@outlook.com"
+        }
+    ],
+    "require": {}
+}

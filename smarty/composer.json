@@ -1,0 +1,15 @@
+{
+    "name": "bluhm/ba_smarty",
+    "autoload": {
+        "psr-4": {
+            "Bluhm\\BaSmarty\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Johannes",
+            "email": "johannes.bluhm@outlook.com"
+        }
+    ],
+    "require": {}
+}

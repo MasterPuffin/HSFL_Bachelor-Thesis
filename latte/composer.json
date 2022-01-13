@@ -11,5 +11,7 @@
             "email": "johannes.bluhm@outlook.com"
         }
     ],
-    "require": {}
+    "require": {
+        "latte/latte": "^2.10"
+    }
 }

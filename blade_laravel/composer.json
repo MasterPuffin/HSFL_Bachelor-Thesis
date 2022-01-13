@@ -1,8 +1,8 @@
 {
-    "name": "bluhm/ba_blade",
+    "name": "bluhm/ba_blade-laravel",
     "autoload": {
         "psr-4": {
-            "Bluhm\\BaBlade\\": "src/"
+            "Bluhm\\BaBladeLaravel\\": "src/"
         }
     },
     "authors": [

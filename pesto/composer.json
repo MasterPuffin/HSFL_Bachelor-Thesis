@@ -1,8 +1,8 @@
 {
-    "name": "bluhm/ba_mustache",
+    "name": "bluhm/ba_pesto",
     "autoload": {
         "psr-4": {
-            "Bluhm\\BaMustache\\": "src/"
+            "Bluhm\\BaPesto\\": "src/"
         }
     },
     "authors": [
@@ -11,7 +11,5 @@
             "email": "johannes.bluhm@outlook.com"
         }
     ],
-    "require": {
-        "mustache/mustache": "^2.14"
-    }
+    "require": {}
 }

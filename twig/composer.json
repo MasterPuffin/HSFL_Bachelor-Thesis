@@ -11,5 +11,7 @@
             "email": "johannes.bluhm@outlook.com"
         }
     ],
-    "require": {}
+    "require": {
+        "twig/twig": "^3.0"
+    }
 }

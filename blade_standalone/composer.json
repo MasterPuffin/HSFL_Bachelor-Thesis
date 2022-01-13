@@ -11,5 +11,7 @@
             "email": "johannes.bluhm@outlook.com"
         }
     ],
-    "require": {}
+    "require": {
+        "eftec/bladeone": "^4.2"
+    }
 }

@@ -5,11 +5,14 @@
             "Bluhm\\BaVanilla\\": "src/"
         }
     },
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Johannes",
             "email": "johannes.bluhm@outlook.com"
         }
     ],
-    "require": {}
+    "require": {
+        "masterpuffin/sql": "dev-main"
+    }
 }

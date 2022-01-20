@@ -23,6 +23,7 @@ if (in_array($request[0], ["vanilla", "blade_laravel", "blade_standalone", "latt
 	sort($request, SORT_NUMERIC);
 }
 
+//devPrint($request);
 
 switch ($request[0]) {
 	case 'home':
@@ -30,6 +31,7 @@ switch ($request[0]) {
 		break;
 	case 'news':
 		echo 'news';
+		echo !isset($request[1]) ? 'all' : 'spec';
 		break;
 	case 'users':
 		echo 'users';

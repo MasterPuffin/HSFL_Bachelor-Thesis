@@ -19,7 +19,7 @@
     "scripts": {
         "post-install-cmd": [
             "mkdir assets",
-            "mklink /j \"assets/bootstrap/\" \"vendor/twbs/bootstrap/dist/\""
+            "ln \"assets/bootstrap/\" \"vendor/twbs/bootstrap/dist/\""
         ]
     }
 }

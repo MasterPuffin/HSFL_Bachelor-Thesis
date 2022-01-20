@@ -1,5 +1,8 @@
 <?php
 
+
+use Views\Home;
+
 require 'require.php';
 /*
 echo "Hello World";
@@ -8,47 +11,34 @@ print_r($klaus);
 $test = SQL::select("SELECT * FROM test WHERE 1");
 print_r($test);
 */
+
+//Explode Request to array and remove empty entries
+$request = array_diff(explode("/", $_SERVER['REQUEST_URI']), [""]);
+//Reindex array keys
+sort($request, SORT_NUMERIC);
+
+//Remove project name from request
+if (in_array($request[0], ["vanilla", "blade_laravel", "blade_standalone", "latte", "mustache", "pesto", "smarty", "twig"])) {
+	unset($request[0]);
+	sort($request, SORT_NUMERIC);
+}
+
+
+switch ($request[0]) {
+	case 'home':
+		Home::page();
+		break;
+	case 'news':
+		echo 'news';
+		break;
+	case 'users':
+		echo 'users';
+		break;
+	case 'contact':
+		echo 'contact';
+		break;
+	default:
+		echo '404';
+		break;
+}
 ?>
-<!doctype html>
-<html lang="de">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <title>Hello, world!</title>
-</head>
-<body>
-
-<div class="container">
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-            <img src="assets/images/HSFL_Icon.png" height="32px" alt="Logo">
-            <span class="fs-4">Simple header</span>
-        </a>
-
-        <ul class="nav nav-pills">
-            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-        </ul>
-    </header>
-    <main>
-        <h1>Hello, world!</h1>
-    </main>
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <div class="col-md-4 d-flex align-items-center">
-            <span class="text-muted">© 2021 Company, Inc</span>
-        </div>
-    </footer>
-</div>
-
-
-<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>

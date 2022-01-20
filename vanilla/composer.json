@@ -18,8 +18,8 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "mkdir assets",
-            "ln \"assets/bootstrap/\" \"vendor/twbs/bootstrap/dist/\""
+            "ln -s \"$(pwd)/vendor/twbs/bootstrap/dist\" \"$(pwd)/assets/bootstrap\"",
+            "sudo chown www-data assets/bootstrap"
         ]
     }
 }

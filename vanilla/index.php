@@ -42,10 +42,10 @@ switch ($request[0]) {
 		!isset($request[1]) ? \Views\UserGrid::page() : \Views\User::page($request[1]);
 		break;
 	case 'contact':
-		echo 'contact';
+		\Views\Contact::page();
 		break;
 	default:
-		echo '404';
+		\Views\Error::page();
 		break;
 }
 ?>

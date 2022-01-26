@@ -28,7 +28,7 @@ class NewsGrid {
                                 <div class="card-body">
                                     <h5 class="card-title"><?= $newsItem->title ?></h5>
                                     <p class="card-text"><?= truncate($newsItem->text, 100) ?></p>
-                                    <a href="../news/<?= $newsItem->id ?>/" class="btn btn-primary stretched-link">
+                                    <a href="<?= WEBROOT?>/news/<?= $newsItem->id ?>/" class="btn btn-primary stretched-link">
                                         Mehr lesen
                                     </a>
                                 </div>

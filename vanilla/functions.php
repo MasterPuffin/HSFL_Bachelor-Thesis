@@ -28,6 +28,6 @@ function truncate(string $string, int $length): string {
 
 //Adds the server path to an image and if the image is null, returns an placeholder image
 function resolveImage(?string $image): string {
-	if (empty($image)) $image = "placeholder_m.jpg";
-	return WEBROOT . "/assets/images/" . $image;
+	if (empty($image)) $image = "placeholder.jpg";
+	return RESOURCESROOT . "/.assets/images/" . $image;
 }

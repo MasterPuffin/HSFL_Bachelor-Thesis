@@ -13,13 +13,10 @@
         }
     ],
     "require": {
-        "masterpuffin/sql": "dev-main",
-        "twbs/bootstrap": "5.1.3"
+        "masterpuffin/sql": "dev-main"
     },
     "scripts": {
         "post-install-cmd": [
-            "ln -s \"$(pwd)/vendor/twbs/bootstrap/dist\" \"$(pwd)/assets/bootstrap\"",
-            "sudo chown www-data assets/bootstrap"
         ]
     }
 }

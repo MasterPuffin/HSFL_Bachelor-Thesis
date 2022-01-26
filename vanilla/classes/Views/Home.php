@@ -17,7 +17,7 @@ class Home {
             <main>
 
                 <div class="px-4 py-5 my-5 text-center">
-                    <img class="d-block mx-auto mb-4" src="<?= WEBROOT ?>/assets/images/HSFL_Icon.png" alt=""
+                    <img class="d-block mx-auto mb-4" src="<?= RESOURCESROOT ?>/.assets/images/HSFL_Icon.png" alt=""
                          height="100">
                     <h1 class="display-5 fw-bold">Willkommen</h1>
                     <div class="col-lg-6 mx-auto">

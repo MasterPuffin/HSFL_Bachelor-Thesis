@@ -1,7 +1,6 @@
 <?php
 
 
-use Views\Home;
 
 require 'require.php';
 /*
@@ -25,13 +24,17 @@ if (in_array($request[0], ["vanilla", "blade_laravel", "blade_standalone", "latt
 
 //devPrint($request);
 
+//Redirect to home page when accessing /
+if (!isset($request[0])) {
+	redirect("home/");
+}
+
 switch ($request[0]) {
 	case 'home':
-		Home::page();
+		\Views\Home::page();
 		break;
 	case 'news':
-		echo 'news';
-		echo !isset($request[1]) ? 'all' : 'spec';
+		!isset($request[1]) ? \Views\NewsGrid::page() : \Views\News::page($request[1]);
 		break;
 	case 'users':
 		echo 'users';

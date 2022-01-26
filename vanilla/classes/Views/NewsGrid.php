@@ -6,21 +6,7 @@ use HTML;
 
 class NewsGrid {
 	static function page() {
-		$user = new \User(1, true, "John Doe", null, null, null, null);
-		$news = [
-			new \News(1, "Lorem Ipsum", time(), null, $user, loremIpsum()),
-			new \News(1, "Lorem Ipsum", time(), null, $user, loremIpsum()),
-			new \News(1, "Lorem Ipsum", time(), null, $user, loremIpsum()),
-			new \News(1, "Lorem Ipsum", time(), null, $user, loremIpsum()),
-			new \News(1, "Lorem Ipsum", time(), null, $user, loremIpsum()),
-			new \News(1, "Lorem Ipsum", time(), null, $user, loremIpsum()),
-			new \News(1, "Lorem Ipsum", time(), null, $user, loremIpsum()),
-			new \News(1, "Lorem Ipsum", time(), null, $user, loremIpsum()),
-			new \News(1, "Lorem Ipsum", time(), null, $user, loremIpsum()),
-			new \News(1, "Lorem Ipsum", time(), null, $user, loremIpsum()),
-			new \News(1, "Lorem Ipsum", time(), null, $user, loremIpsum()),
-		]
-
+        $news = \News::getAll();
 		?>
         <!doctype html>
         <html lang="de">

@@ -7,7 +7,7 @@ use HTML;
 class News {
 	static function page(int $id) {
 		$user = new \User(1, true, "John Doe", null, "Sales", null, null);
-		$news = new \News(1, "Lorem Ipsum", time(), null, $user, loremIpsum());
+		$news = new \News($id);
 		?>
         <!doctype html>
         <html lang="de">
@@ -20,10 +20,11 @@ class News {
                 <h1><?= $news->title ?></h1>
                 <hr class="mt-2 mb-4">
                 <img class="img-fluid rounded mx-auto d-block mb-4" alt="image" src="<?= resolveImage($news->image) ?>">
+                <p class="text-end"><strong><?= date("d.m.Y", $news->timestamp) ?></strong></p>
                 <p><?= $news->text ?></p>
                 <hr class="">
                 <div class="row position-relative">
-                    <a href="<?= WEBROOT ?>/user/<?= $news->author->id ?>/" class="stretched-link"></a>
+                    <a href="<?= WEBROOT ?>/users/<?= $news->author->id ?>/" class="stretched-link"></a>
                     <div class="col-1">
                         <img class="img-user rounded-circle" alt="image"
                              src="<?= resolveImage($news->author->image) ?>">

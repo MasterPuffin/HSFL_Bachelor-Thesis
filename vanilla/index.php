@@ -39,7 +39,7 @@ switch ($request[0]) {
 		!isset($request[1]) ? \Views\NewsGrid::page() : \Views\News::page($request[1]);
 		break;
 	case 'users':
-		echo 'users';
+		!isset($request[1]) ? \Views\UserGrid::page() : \Views\User::page($request[1]);
 		break;
 	case 'contact':
 		echo 'contact';

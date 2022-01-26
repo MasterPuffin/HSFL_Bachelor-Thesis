@@ -8,20 +8,33 @@ class News {
 	public User $author;
 	public string $text;
 
-	/**
-	 * @param int $id
-	 * @param string $title
-	 * @param int $timestamp
-	 * @param string|null $image
-	 * @param User $author
-	 * @param string $text
-	 */
-	public function __construct(int $id, string $title, int $timestamp, ?string $image, User $author, string $text) {
-		$this->id = $id;
-		$this->title = $title;
-		$this->timestamp = $timestamp;
-		$this->image = $image;
-		$this->author = $author;
-		$this->text = $text;
+	public function __construct($id = null) {
+		if (!is_null($id)) {
+			$this->getById($id);
+		}
+	}
+
+	function cast(array $query) {
+		$this->id = $query["id"];
+		$this->title = $query["title"];
+		$this->timestamp = $query["timestamp"];
+		$this->image = $query["image"];
+		$this->author = new User($query["author"]);
+		$this->text = $query["text"];
+	}
+
+	function getById($id) {
+		$query = SQL::select("SELECT * FROM news WHERE id LIKE ?", "i", $id);
+		$this->cast($query);
+	}
+
+	static function getAll(): array {
+		$query = SQL::select_array("SELECT * FROM news ORDER BY timestamp DESC", "");
+		return SQL::castQryToObj($query, static::class);
+	}
+
+	static function getForUser(int $user): array {
+		$query = SQL::select_array("SELECT * FROM news WHERE author = ? ORDER BY timestamp DESC LIMIT 4", "i", $user);
+		return SQL::castQryToObj($query, static::class);
 	}
 }

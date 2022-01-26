@@ -38,7 +38,7 @@ class NewsGrid {
 						?>
                         <div class="col-md-3 mb-4">
                             <div class="card ">
-                                <img src="../assets/images/placeholder_m.jpg" class="card-img-top" alt="Image">
+                                <img src="<?= resolveImage($newsItem->image)?>" class="card-img-top" alt="Image">
                                 <div class="card-body">
                                     <h5 class="card-title"><?= $newsItem->title ?></h5>
                                     <p class="card-text"><?= truncate($newsItem->text, 100) ?></p>

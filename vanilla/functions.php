@@ -25,3 +25,9 @@ function loremIpsum(): string {
 function truncate(string $string, int $length): string {
 	return substr($string, 0, $length) . "...";
 }
+
+//Adds the server path to an image and if the image is null, returns an placeholder image
+function resolveImage(?string $image): string {
+	if (is_null($image)) $image = "placeholder_m.jpg";
+	return WEBROOT . "/assets/images/" . $image;
+}

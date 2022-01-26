@@ -22,6 +22,8 @@ if (in_array($request[0], ["vanilla", "blade_laravel", "blade_standalone", "latt
 	sort($request, SORT_NUMERIC);
 }
 
+
+
 //devPrint($request);
 
 //Redirect to home page when accessing /

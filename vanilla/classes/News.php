@@ -28,8 +28,9 @@ class News {
 		$this->cast($query);
 	}
 
-	static function getAll(): array {
-		$query = SQL::select_array("SELECT * FROM news ORDER BY timestamp DESC", "");
+	static function getAll(?int $limit = null): array {
+		if (is_null($limit)) $limit = 999;
+		$query = SQL::select_array("SELECT * FROM news ORDER BY timestamp DESC LIMIT ?", "i", $limit);
 		return SQL::castQryToObj($query, static::class);
 	}
 

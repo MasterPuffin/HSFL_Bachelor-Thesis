@@ -1,8 +1,17 @@
 <?php
-require_once 'vendor/autoload.php';
+require 'require.php';
 
-$loader = new \Twig\Loader\ArrayLoader([
-	'index' => 'Hello World']);
-$twig = new \Twig\Environment($loader);
 
-echo $twig->render('index');
+$loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/templates');
+$twig = new \Twig\Environment($loader, [
+	'cache' => __DIR__ . '/cache',
+]);
+
+$nav = [
+	["Home", "home"],
+	["News", "news"],
+	["Mitarbeiter", "users"],
+	["Kontakt", "contact"],
+];
+
+echo $twig->render('base.twig', ['nav' => $nav]);

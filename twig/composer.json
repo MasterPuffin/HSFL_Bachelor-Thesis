@@ -5,6 +5,7 @@
             "Bluhm\\BaTwig\\": "src/"
         }
     },
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Johannes",
@@ -12,6 +13,7 @@
         }
     ],
     "require": {
-        "twig/twig": "^3.0"
+        "twig/twig": "^3.0",
+        "masterpuffin/sql": "dev-main"
     }
 }

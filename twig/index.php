@@ -46,8 +46,7 @@ switch ($request[0]) {
 		if (isset($request[1])) {
 			echo $twig->render('user.twig', ['nav' => $nav, 'user' => new \User($request[1]), 'news' => $news = \News::getForUser($request[1])]);
 		} else {
-			$users = \User::getAll();
-			echo $twig->render('userGrid.twig', ['nav' => $nav, 'users' => $users, 'departments' => \User::orderByDepartments($users)]);
+			echo $twig->render('userGrid.twig', ['nav' => $nav, 'departments' => \User::orderByDepartments(\User::getAll())]);
 		}
 		break;
 	case 'contact':

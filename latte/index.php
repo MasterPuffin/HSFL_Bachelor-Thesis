@@ -57,14 +57,13 @@ switch ($request[0]) {
 		break;
 	case 'users':
 		if (isset($request[1])) {
-			//echo $twig->render('user.twig', ['nav' => $nav, 'user' => new \User($request[1]), 'news' => $news = \News::getForUser($request[1])]);
+			$latte->render('templates/user.latte', ['root' => $root, 'nav' => $nav, 'user' => new \User($request[1]), 'news' => \News::getForUser($request[1])]);
 		} else {
-			$users = \User::getAll();
-			//echo $twig->render('userGrid.twig', ['nav' => $nav, 'users' => $users, 'departments' => \User::orderByDepartments($users)]);
+			$latte->render('templates/userGrid.latte', ['root' => $root, 'nav' => $nav, 'departments' => \User::orderByDepartments(\User::getAll())]);
 		}
 		break;
 	case 'contact':
-		//echo $twig->render('contact.twig', ['nav' => $nav, 'form' => $_POST]);
+		$latte->render('templates/contact.latte', ['root' => $root, 'nav' => $nav, 'form' => $_POST]);
 		break;
 	default:
 		$latte->render('templates/404.latte', ['root' => $root, 'nav' => $nav]);

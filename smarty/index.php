@@ -48,13 +48,16 @@ switch ($request[0]) {
 		break;
 	case 'users':
 		if (isset($request[1])) {
-			//echo $twig->render('user.twig', ['nav' => $nav, 'user' => new \User($request[1]), 'news' => $news = \News::getForUser($request[1])]);
+			$smarty->assign(['user' => new User($request[1]), 'news' => \News::getForUser($request[1])]);
+			$smarty->display('user.tpl');
 		} else {
-			//echo $twig->render('userGrid.twig', ['nav' => $nav, 'departments' => \User::orderByDepartments(\User::getAll())]);
+			$smarty->assign('departments', \User::orderByDepartments(\User::getAll()));
+			$smarty->display('userGrid.tpl');
 		}
 		break;
 	case 'contact':
-		//echo $twig->render('contact.twig', ['nav' => $nav, 'form' => $_POST]);
+		$smarty->assign('form', $_POST);
+		$smarty->display('contact.tpl');
 		break;
 	default:
 		$smarty->display('404.tpl');

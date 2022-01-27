@@ -5,6 +5,8 @@
             "Bluhm\\BaLatte\\": "src/"
         }
     },
+    "minimum-stability": "dev",
+    "prefer-stable" : true,
     "authors": [
         {
             "name": "Johannes",
@@ -12,6 +14,8 @@
         }
     ],
     "require": {
+        "masterpuffin/sql": "dev-main",
+        "nette/utils": "^3.2",
         "latte/latte": "^2.10"
     }
 }

@@ -51,7 +51,7 @@ switch ($request[0]) {
 		}
 		break;
 	case 'contact':
-		//\Views\Contact::page();
+		echo $twig->render('contact.twig', ['nav' => $nav, 'form' => $_POST]);
 		break;
 	default:
 		echo $twig->render('404.twig', ['nav' => $nav]);

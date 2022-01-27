@@ -40,7 +40,7 @@ switch ($request[0]) {
 		echo $twig->render('home.twig', ['nav' => $nav, 'news' => \News::getAll(4)]);
 		break;
 	case 'news':
-		//!isset($request[1]) ? \Views\NewsGrid::page() : \Views\News::page($request[1]);
+		echo !isset($request[1]) ? $twig->render('newsGrid.twig', ['nav' => $nav, 'news' => \News::getAll()]) : $twig->render('news.twig', ['nav' => $nav, 'news' => new \News($request[1])]);
 		break;
 	case 'users':
 		//!isset($request[1]) ? \Views\UserGrid::page() : \Views\User::page($request[1]);

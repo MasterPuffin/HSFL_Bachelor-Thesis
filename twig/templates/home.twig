@@ -18,20 +18,7 @@
         <h2 class="display-6 fw-bold mb-4">Letzte News</h2>
         <div class="row">
             {% for newsItem in news %}
-
-                <div class="col-md-3 my-4">
-                    <div class="card">
-                        <img src="{{ newsItem.image | image }} " class="card-img-top" alt="Image">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ newsItem.title }} </h5>
-                            <p class="card-text">{{ truncate(newsItem.text, 100) }}</p>
-                            <a href="{{ constant('WEBROOT') }}/news/{{ newsItem.id }}/"
-                               class="btn btn-primary stretched-link">
-                                Mehr lesen
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                {{ include('components/newsGridItem.twig') }}
             {% endfor %}
         </div>
     </div>

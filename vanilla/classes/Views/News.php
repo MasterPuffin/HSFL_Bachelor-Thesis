@@ -6,7 +6,6 @@ use HTML;
 
 class News {
 	static function page(int $id) {
-		$user = new \User(1, true, "John Doe", null, "Sales", null, null);
 		$news = new \News($id);
 		?>
         <!doctype html>

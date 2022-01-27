@@ -5,6 +5,7 @@
             "Bluhm\\BaSmarty\\": "src/"
         }
     },
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Johannes",
@@ -12,6 +13,7 @@
         }
     ],
     "require": {
-        "smarty/smarty": "^4.0"
+        "smarty/smarty": "^4.0",
+        "masterpuffin/sql": "dev-main"
     }
 }

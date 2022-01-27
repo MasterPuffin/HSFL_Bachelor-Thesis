@@ -1,0 +1,9 @@
+{extends "base.tpl"}
+{block "main"}
+<div class="d-flex justify-content-center h-50">
+    <div class="text-center">
+        <h1>404</h1>
+        <p>Die angeforderte Seite wurde nicht gefunden</p>
+    </div>
+</div>
+{/block}

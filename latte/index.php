@@ -11,10 +11,10 @@ $latte = new Latte\Engine;
 
 $latte->setTempDirectory(__DIR__ . '/cache/');
 
-$latte->addFilter('truncate', function (string $string, int $length = 100): string {
+$latte->addFunction('truncate', function (string $string, int $length = 100): string {
 	return substr($string, 0, $length) . "...";
 });
-$latte->addFunction('resolveImage', function (?string $image) {
+$latte->addFilter('image', function (?string $image) {
 	global $root;
 	if (empty($image)) $image = "placeholder.jpg";
 	return $root["ressources"] . "/.assets/images/" . $image;
@@ -28,14 +28,45 @@ $nav = [
 	["Kontakt", "contact"],
 ];
 
+//Explode Request to array and remove empty entries
+$request = array_diff(explode("/", $_SERVER['REQUEST_URI']), [""]);
+//Reindex array keys
+sort($request, SORT_NUMERIC);
 
+//Remove project name from request
+if (in_array($request[0], ["vanilla", "blade_laravel", "blade_standalone", "latte", "mustache", "pesto", "smarty", "twig"])) {
+	unset($request[0]);
+	sort($request, SORT_NUMERIC);
+}
 
-// render to output
-$latte->render('templates/home.latte', ['root' => $root, 'nav' => $nav, 'news' => \News::getAll(4)]);
+//Redirect to home page when accessing /
+if (!isset($request[0])) {
+	redirect("home/");
+}
 
-$params = [
-	'items' => ['one', 'two', 'three'],
-];
-
-// render to output
-//$latte->render('templates/template.latte', $params);
+switch ($request[0]) {
+	case 'home':
+		$latte->render('templates/home.latte', ['root' => $root, 'nav' => $nav, 'news' => \News::getAll(4)]);
+		break;
+	case 'news':
+		if (isset($request[1])) {
+			$latte->render('templates/news.latte', ['root' => $root, 'nav' => $nav, 'news' => new \News($request[1])]);
+		} else {
+			$latte->render('templates/newsGrid.latte', ['root' => $root, 'nav' => $nav, 'news' => \News::getAll()]);
+		}
+		break;
+	case 'users':
+		if (isset($request[1])) {
+			//echo $twig->render('user.twig', ['nav' => $nav, 'user' => new \User($request[1]), 'news' => $news = \News::getForUser($request[1])]);
+		} else {
+			$users = \User::getAll();
+			//echo $twig->render('userGrid.twig', ['nav' => $nav, 'users' => $users, 'departments' => \User::orderByDepartments($users)]);
+		}
+		break;
+	case 'contact':
+		//echo $twig->render('contact.twig', ['nav' => $nav, 'form' => $_POST]);
+		break;
+	default:
+		$latte->render('templates/404.latte', ['root' => $root, 'nav' => $nav]);
+		break;
+}

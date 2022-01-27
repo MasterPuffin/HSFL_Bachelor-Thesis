@@ -19,9 +19,6 @@ $nav = [
 	["Kontakt", "contact"],
 ];
 
-echo $twig->render('home.twig', ['nav' => $nav, 'news'=>\News::getAll(4)]);
-/*
-
 //Explode Request to array and remove empty entries
 $request = array_diff(explode("/", $_SERVER['REQUEST_URI']), [""]);
 //Reindex array keys
@@ -33,9 +30,6 @@ if (in_array($request[0], ["vanilla", "blade_laravel", "blade_standalone", "latt
 	sort($request, SORT_NUMERIC);
 }
 
-
-//devPrint($request);
-
 //Redirect to home page when accessing /
 if (!isset($request[0])) {
 	redirect("home/");
@@ -43,19 +37,18 @@ if (!isset($request[0])) {
 
 switch ($request[0]) {
 	case 'home':
-		\Views\Home::page();
+		echo $twig->render('home.twig', ['nav' => $nav, 'news' => \News::getAll(4)]);
 		break;
 	case 'news':
-		!isset($request[1]) ? \Views\NewsGrid::page() : \Views\News::page($request[1]);
+		//!isset($request[1]) ? \Views\NewsGrid::page() : \Views\News::page($request[1]);
 		break;
 	case 'users':
-		!isset($request[1]) ? \Views\UserGrid::page() : \Views\User::page($request[1]);
+		//!isset($request[1]) ? \Views\UserGrid::page() : \Views\User::page($request[1]);
 		break;
 	case 'contact':
-		\Views\Contact::page();
+		//\Views\Contact::page();
 		break;
 	default:
-		\Views\Error::page();
+		echo $twig->render('404.twig', ['nav' => $nav]);
 		break;
 }
-*/

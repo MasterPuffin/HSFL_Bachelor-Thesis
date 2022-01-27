@@ -13,7 +13,7 @@ $nav = [
 $smarty = new Smarty();
 $smarty->assign('nav', $nav);
 
-$smarty->registerPlugin("modifier","image", "resolveImage",false);
+$smarty->registerPlugin("modifier", "image", "resolveImage", false);
 
 //Explode Request to array and remove empty entries
 $request = array_diff(explode("/", $_SERVER['REQUEST_URI']), [""]);
@@ -38,7 +38,13 @@ switch ($request[0]) {
 		//echo $twig->render('home.twig', ['nav' => $nav, 'news' => \News::getAll(4)]);
 		break;
 	case 'news':
-		//echo !isset($request[1]) ? $twig->render('newsGrid.twig', ['nav' => $nav, 'news' => \News::getAll()]) : $twig->render('news.twig', ['nav' => $nav, 'news' => new \News($request[1])]);
+		if (isset($request[1])) {
+			$smarty->assign('news', new News($request[1]));
+			$smarty->display('news.tpl');
+		} else {
+			$smarty->assign('news', \News::getAll());
+			$smarty->display('newsGrid.tpl');
+		}
 		break;
 	case 'users':
 		if (isset($request[1])) {

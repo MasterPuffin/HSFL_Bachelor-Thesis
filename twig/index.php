@@ -43,7 +43,12 @@ switch ($request[0]) {
 		echo !isset($request[1]) ? $twig->render('newsGrid.twig', ['nav' => $nav, 'news' => \News::getAll()]) : $twig->render('news.twig', ['nav' => $nav, 'news' => new \News($request[1])]);
 		break;
 	case 'users':
-		//!isset($request[1]) ? \Views\UserGrid::page() : \Views\User::page($request[1]);
+		if (isset($request[1])) {
+			echo $twig->render('user.twig', ['nav' => $nav, 'user' => new \User($request[1]), 'news' => $news = \News::getForUser($request[1])]);
+		} else {
+			$users = \User::getAll();
+			echo $twig->render('userGrid.twig', ['nav' => $nav, 'users' => $users, 'departments' => \User::orderByDepartments($users)]);
+		}
 		break;
 	case 'contact':
 		//\Views\Contact::page();

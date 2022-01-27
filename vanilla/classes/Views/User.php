@@ -53,9 +53,7 @@ class User {
 		                <?php
 	                }
 	                ?>
-
                 </div>
-                <hr class="">
             </main>
 			<?php HTML::footer(); ?>
         </div>

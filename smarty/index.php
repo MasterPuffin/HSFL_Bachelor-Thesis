@@ -11,8 +11,9 @@ $nav = [
 
 
 $smarty = new Smarty();
-$smarty->assign('nav',$nav);
+$smarty->assign('nav', $nav);
 
+$smarty->registerPlugin("modifier","image", "resolveImage",false);
 
 //Explode Request to array and remove empty entries
 $request = array_diff(explode("/", $_SERVER['REQUEST_URI']), [""]);
@@ -32,7 +33,8 @@ if (!isset($request[0])) {
 
 switch ($request[0]) {
 	case 'home':
-		$smarty->display('base.tpl');
+		$smarty->assign('news', \News::getAll(4));
+		$smarty->display('home.tpl');
 		//echo $twig->render('home.twig', ['nav' => $nav, 'news' => \News::getAll(4)]);
 		break;
 	case 'news':

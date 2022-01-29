@@ -7,6 +7,13 @@ $m = new Mustache_Engine([
 	'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__) . '/templates'),
 ]);
 
+$m->addHelper('fimage', function ($value) {
+	return resolveImage($value);
+});
+$m->addHelper('truncate', function ($value, $length = 100) {
+	return truncate($value, $length);
+});
+
 $root = ['web' => "/mustache", "ressources" => ""];
 
 $nav = [
@@ -16,13 +23,6 @@ $nav = [
 	["Kontakt", "contact"],
 ];
 
-$mainTemplate = $m->loadTemplate('404');
-$main = $mainTemplate->render();
-
-$baseTemplate = $m->loadTemplate('base');
-echo $baseTemplate->render(['root' => $root, 'nav' => $nav, 'main' => $main]);
-
-/*
 
 //Explode Request to array and remove empty entries
 $request = array_diff(explode("/", $_SERVER['REQUEST_URI']), [""]);
@@ -42,24 +42,28 @@ if (!isset($request[0])) {
 
 switch ($request[0]) {
 	case 'home':
-		echo $twig->render('home.twig', ['nav' => $nav, 'news' => \News::getAll(4)]);
+		$mainTemplate = $m->loadTemplate('home');
+		$main = $mainTemplate->render(['root' => $root, 'news' => \News::getAll(4)]);
 		break;
 	case 'news':
-		echo !isset($request[1]) ? $twig->render('newsGrid.twig', ['nav' => $nav, 'news' => \News::getAll()]) : $twig->render('news.twig', ['nav' => $nav, 'news' => new \News($request[1])]);
+		//echo !isset($request[1]) ? $twig->render('newsGrid.twig', ['nav' => $nav, 'news' => \News::getAll()]) : $twig->render('news.twig', ['nav' => $nav, 'news' => new \News($request[1])]);
 		break;
 	case 'users':
 		if (isset($request[1])) {
-			echo $twig->render('user.twig', ['nav' => $nav, 'user' => new \User($request[1]), 'news' => $news = \News::getForUser($request[1])]);
+			//echo $twig->render('user.twig', ['nav' => $nav, 'user' => new \User($request[1]), 'news' => $news = \News::getForUser($request[1])]);
 		} else {
-			echo $twig->render('userGrid.twig', ['nav' => $nav, 'departments' => \User::orderByDepartments(\User::getAll())]);
+			//echo $twig->render('userGrid.twig', ['nav' => $nav, 'departments' => \User::orderByDepartments(\User::getAll())]);
 		}
 		break;
 	case 'contact':
-		echo $twig->render('contact.twig', ['nav' => $nav, 'form' => $_POST]);
+		//echo $twig->render('contact.twig', ['nav' => $nav, 'form' => $_POST]);
 		break;
 	default:
-		echo $twig->render('404.twig', ['nav' => $nav]);
+		$mainTemplate = $m->loadTemplate('404');
+		$main = $mainTemplate->render();
 		break;
 }
 
-*/
+
+$baseTemplate = $m->loadTemplate('base');
+echo $baseTemplate->render(['root' => $root, 'nav' => $nav, 'main' => $main]);

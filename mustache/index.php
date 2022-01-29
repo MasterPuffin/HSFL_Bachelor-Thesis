@@ -59,9 +59,18 @@ switch ($request[0]) {
 		break;
 	case 'users':
 		if (isset($request[1])) {
-			//echo $twig->render('user.twig', ['nav' => $nav, 'user' => new \User($request[1]), 'news' => $news = \News::getForUser($request[1])]);
+			$mainTemplate = $m->loadTemplate('user');
+			$main = $mainTemplate->render(['root' => $root, 'user' => new \User($request[1]), 'news' => $news = \News::getForUser($request[1])]);
 		} else {
-			//echo $twig->render('userGrid.twig', ['nav' => $nav, 'departments' => \User::orderByDepartments(\User::getAll())]);
+			//Convert simple array to Associative array for mustache
+			$departments = \User::orderByDepartments(\User::getAll());
+			$departmentsAssociative = [];
+			foreach ($departments as $department) {
+				$departmentsAssociative[] = $department;
+			}
+
+			$mainTemplate = $m->loadTemplate('userGrid');
+			$main = $mainTemplate->render(['root' => $root, 'departments' => $departmentsAssociative]);
 		}
 		break;
 	case 'contact':

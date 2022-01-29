@@ -1,0 +1,28 @@
+{{%FILTERS}}
+<h1>Mitarbeiter</h1>
+<hr class="mt-2 mb-4">
+{{#departments}}
+    <h2>{{ name }}</h2>
+    <hr class="mt-2 mb-4">
+    <div class="row">
+        {{#users}}
+            <div class="col-md-3 mb-4">
+                <div class="card ">
+                    <img src="{{ image|fimage }}" class="card-img-top" alt="Image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ name }}</h5>
+                        <p class="card-text">
+                            {{ phone }}
+                            <br>
+                            {{ email }}
+                        </p>
+                        <a href="{{ root.web }}/users/{{ id }}/"
+                           class="btn btn-primary stretched-link">
+                            Mehr lesen
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {{/users}}
+    </div>
+{{/departments}}

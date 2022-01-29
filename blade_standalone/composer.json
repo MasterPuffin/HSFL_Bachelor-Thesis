@@ -5,6 +5,7 @@
             "Bluhm\\BaBladeStandalone\\": "src/"
         }
     },
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Johannes",
@@ -12,6 +13,7 @@
         }
     ],
     "require": {
-        "eftec/bladeone": "^4.2"
+        "eftec/bladeone": "^4.2",
+        "masterpuffin/sql": "dev-main"
     }
 }

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="{{# root}}{{ressources}}{{/ root}}/.assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{# root}}{{ressources}}{{/ root}}/.assets/custom.css" rel="stylesheet">
+
+    <title>Hello, world!</title>
+</head>
+<body>
+
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href={{# root}}{{web}}{{/ root}}/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark
+        text-decoration-none">
+        <img src="{{# root}}{{ressources}}{{/ root}}/.assets/images/HSFL_Icon.png" height="32px" alt="Logo">
+        <span class="fs-4">Company</span>
+        </a>
+        <ul class="nav nav-pills">
+            {{#nav}}
+                <li class="nav-item"><a href="{{# root}}{{web}}{{/ root}}/{{ 1 }}/"
+                                        class="nav-link">{{ 0 }}</a></li>
+            {{/nav}}
+        </ul>
+    </header>
+    <main>
+        {{&main}}
+    </main>
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <span class="text-muted">© 2021 Company, Inc</span>
+        </div>
+        <script src="{{# root}}{{ressources}}{{/ root}}/.assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    </footer>
+</div>
+</body>
+</html>

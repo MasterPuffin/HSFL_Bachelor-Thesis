@@ -5,6 +5,7 @@
             "Bluhm\\BaMustache\\": "src/"
         }
     },
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Johannes",
@@ -12,6 +13,7 @@
         }
     ],
     "require": {
-        "mustache/mustache": "^2.14"
+        "mustache/mustache": "^2.14",
+        "masterpuffin/sql": "dev-main"
     }
 }

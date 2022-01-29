@@ -74,7 +74,8 @@ switch ($request[0]) {
 		}
 		break;
 	case 'contact':
-		//echo $twig->render('contact.twig', ['nav' => $nav, 'form' => $_POST]);
+		$mainTemplate = $m->loadTemplate('contact');
+		$main = $mainTemplate->render(['root' => $root, 'form' => $_POST]);
 		break;
 	default:
 		$mainTemplate = $m->loadTemplate('404');

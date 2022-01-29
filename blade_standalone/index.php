@@ -51,7 +51,7 @@ switch ($request[0]) {
 		}
 		break;
 	case 'contact':
-		//echo $twig->render('contact.twig', ['nav' => $nav, 'form' => $_POST]);
+		echo $blade->run("contact", ['nav' => $nav, 'form' => $_POST]);
 		break;
 	default:
 		echo $blade->run("404", ['nav' => $nav]);

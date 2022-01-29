@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b2cc061ef5f8c2dd0286cf6a60ba0ac6",
+    "content-hash": "ae0a840d5cd408714b3ac95d5fb52ecf",
     "packages": [
         {
             "name": "masterpuffin/sql",

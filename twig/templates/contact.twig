@@ -21,12 +21,12 @@
         </div>
         <button type="submit" class="btn btn-primary">Absenden</button>
     </form>
-    {% if form is not empty %}
+    {% if form %}
         <div class="alert alert-success mt-4" role="alert">
             <p>
                 Deine Nachricht wurde erfolgreich gesendet!
             </p>
-            <p class="mb-0"><strong>E-Mail:</strong>{{ form.email | e }}</p>
+            <p class="mb-0"><strong>E-Mail:</strong> {{ form.email | e }}</p>
             <p class="mb-0"><strong>Betreff:</strong> {{ form.subject | e }}</p>
             <p class="mb-0"><strong>Nachricht:</strong> {{ form.message | e }}</p>
         </div>

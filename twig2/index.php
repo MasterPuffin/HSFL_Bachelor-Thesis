@@ -39,20 +39,20 @@ switch ($request[0]) {
 		break;
 	case 'news':
 		if (isset($request[1])) {
-			//echo $blade->run("news", ['nav' => $nav, 'news' => new \News($request[1])]);
+			echo $twig->render('news.twig', ['nav' => $nav, 'news' => new \News($request[1])]);
 		} else {
-			//echo $blade->run("newsGrid", ['nav' => $nav, 'news' => \News::getAll()]);
+			echo $twig->render('newsGrid.twig', ['nav' => $nav, 'news' => \News::getAll()]);
 		}
 		break;
 	case 'users':
 		if (isset($request[1])) {
-			//echo $blade->run("user", ['nav' => $nav, 'user' => new \User($request[1]), 'news' => $news = \News::getForUser($request[1])]);
+			echo $twig->render('user.twig', ['nav' => $nav, 'user' => new \User($request[1]), 'news' => $news = \News::getForUser($request[1])]);
 		} else {
-			//echo $blade->run("userGrid", ['nav' => $nav, 'departments' => \User::orderByDepartments(\User::getAll())]);
+			echo $twig->render('userGrid.twig', ['nav' => $nav, 'departments' => \User::orderByDepartments(\User::getAll())]);
 		}
 		break;
 	case 'contact':
-		//echo $blade->run("contact", ['nav' => $nav, 'form' => $_POST]);
+		echo $twig->render('contact.twig', ['nav' => $nav, 'form' => $_POST]);
 		break;
 	default:
 		echo $twig->render('404.twig', ['nav' => $nav]);

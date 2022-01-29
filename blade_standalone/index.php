@@ -37,7 +37,10 @@ switch ($request[0]) {
 		echo $blade->run("home", ['nav' => $nav, 'news' => \News::getAll(4)]);
 		break;
 	case 'news':
-		//echo !isset($request[1]) ? $twig->render('newsGrid.twig', ['nav' => $nav, 'news' => \News::getAll()]) : $twig->render('news.twig', ['nav' => $nav, 'news' => new \News($request[1])]);
+		if (isset($request[1])) {
+			echo $blade->run("news", ['nav' => $nav, 'news' => new \News($request[1])]);
+		} else {
+			echo $blade->run("newsGrid", ['nav' => $nav, 'news' => \News::getAll()]);		}
 		break;
 	case 'users':
 		if (isset($request[1])) {

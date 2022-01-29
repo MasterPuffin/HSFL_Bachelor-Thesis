@@ -10,8 +10,11 @@ $m = new Mustache_Engine([
 $m->addHelper('fimage', function ($value) {
 	return resolveImage($value);
 });
-$m->addHelper('truncate', function ($value, $length = 100) {
-	return truncate($value, $length);
+$m->addHelper('truncate', function ($value) {
+	return truncate($value, 100);
+});
+$m->addHelper('date', function ($value) {
+	return date("d.m.Y", $value);
 });
 
 $root = ['web' => "/mustache", "ressources" => ""];
@@ -46,7 +49,13 @@ switch ($request[0]) {
 		$main = $mainTemplate->render(['root' => $root, 'news' => \News::getAll(4)]);
 		break;
 	case 'news':
-		//echo !isset($request[1]) ? $twig->render('newsGrid.twig', ['nav' => $nav, 'news' => \News::getAll()]) : $twig->render('news.twig', ['nav' => $nav, 'news' => new \News($request[1])]);
+		if (isset($request[1])) {
+			$mainTemplate = $m->loadTemplate('news');
+			$main = $mainTemplate->render(['root' => $root, 'news' => new \News($request[1])]);
+		} else {
+			$mainTemplate = $m->loadTemplate('newsGrid');
+			$main = $mainTemplate->render(['root' => $root, 'news' => \News::getAll()]);
+		}
 		break;
 	case 'users':
 		if (isset($request[1])) {

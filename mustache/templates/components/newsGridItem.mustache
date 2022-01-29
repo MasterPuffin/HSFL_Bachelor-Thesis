@@ -5,7 +5,7 @@
         <div class="card-body">
             <h5 class="card-title">{{ title }} </h5>
             <p class="card-text">{{ text | truncate }}</p>
-            <a href="{{# root}}{{web}}{{/ root}}/news/{{ id }}/"
+            <a href="{{ root.web }}/news/{{ id }}/"
                class="btn btn-primary stretched-link">
                 Mehr lesen
             </a>

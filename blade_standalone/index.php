@@ -34,7 +34,7 @@ if (!isset($request[0])) {
 
 switch ($request[0]) {
 	case 'home':
-		echo $blade->run("404", ['nav' => $nav, 'news' => \News::getAll(4)]);
+		echo $blade->run("home", ['nav' => $nav, 'news' => \News::getAll(4)]);
 		break;
 	case 'news':
 		//echo !isset($request[1]) ? $twig->render('newsGrid.twig', ['nav' => $nav, 'news' => \News::getAll()]) : $twig->render('news.twig', ['nav' => $nav, 'news' => new \News($request[1])]);

@@ -3,5 +3,6 @@
 **/bootstrap
 **/.bootstrap
 **/cache
+**/Cache
 **/templates_c
 **.Identifier

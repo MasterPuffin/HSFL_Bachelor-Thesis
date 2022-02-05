@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MasterPuffin/Pesto.git",
-                "reference": "4f1a8054729a0bd65b670c8cc1b304c24aa6be38"
+                "reference": "a09de1287ee25219d3a0cc519ebe4ae570c4a461"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MasterPuffin/Pesto/zipball/4f1a8054729a0bd65b670c8cc1b304c24aa6be38",
-                "reference": "4f1a8054729a0bd65b670c8cc1b304c24aa6be38",
+                "url": "https://api.github.com/repos/MasterPuffin/Pesto/zipball/a09de1287ee25219d3a0cc519ebe4ae570c4a461",
+                "reference": "a09de1287ee25219d3a0cc519ebe4ae570c4a461",
                 "shasum": ""
             },
             "require": {
@@ -45,7 +45,7 @@
                 "issues": "https://github.com/MasterPuffin/Pesto/issues",
                 "source": "https://github.com/MasterPuffin/Pesto/tree/main"
             },
-            "time": "2022-02-03T19:27:15+00:00"
+            "time": "2022-02-05T18:23:18+00:00"
         },
         {
             "name": "masterpuffin/sql",

@@ -6,7 +6,7 @@
 		<div class="card-body">
 			<h5 class="card-title">{{ title }} </h5>
 			<p class="card-text">{{ text }}</p>
-			<a href="<?= WEBROOT ?>/news/{{ id }}/"
+			<a href="{{ WEBROOT }}/news/{{ id }}/"
 			   class="btn btn-primary stretched-link">
 				Mehr lesen
 			</a>

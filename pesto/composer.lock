@@ -1,0 +1,105 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "1c7ee9d15290dffb73730d146725acdf",
+    "packages": [
+        {
+            "name": "masterpuffin/pesto",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MasterPuffin/Pesto.git",
+                "reference": "4f1a8054729a0bd65b670c8cc1b304c24aa6be38"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MasterPuffin/Pesto/zipball/4f1a8054729a0bd65b670c8cc1b304c24aa6be38",
+                "reference": "4f1a8054729a0bd65b670c8cc1b304c24aa6be38",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/Pesto.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "MasterPuffin",
+                    "email": "git@pxmo.de"
+                }
+            ],
+            "description": "Pesto PHP Template Engine",
+            "support": {
+                "issues": "https://github.com/MasterPuffin/Pesto/issues",
+                "source": "https://github.com/MasterPuffin/Pesto/tree/main"
+            },
+            "time": "2022-02-03T19:27:15+00:00"
+        },
+        {
+            "name": "masterpuffin/sql",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MasterPuffin/SQL.git",
+                "reference": "fb33a14643b196b81edff22a3c14658fd8dc3354"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MasterPuffin/SQL/zipball/fb33a14643b196b81edff22a3c14658fd8dc3354",
+                "reference": "fb33a14643b196b81edff22a3c14658fd8dc3354",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mysqli": "*",
+                "php": ">=7.4"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/SQL.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "MasterPuffin",
+                    "email": "git@pxmo.de"
+                }
+            ],
+            "description": "SQL Tools",
+            "support": {
+                "issues": "https://github.com/MasterPuffin/SQL/issues",
+                "source": "https://github.com/MasterPuffin/SQL/tree/main"
+            },
+            "time": "2022-01-14T16:24:04+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "masterpuffin/pesto": 20,
+        "masterpuffin/sql": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.1.0"
+}

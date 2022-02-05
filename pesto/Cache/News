@@ -1,0 +1,67 @@
+?><?php
+$nav = [
+	["Home", "home"],
+	["News", "news"],
+	["Mitarbeiter", "users"],
+	["Kontakt", "contact"],
+];
+
+?>
+<!doctype html>
+<html lang="de">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="<?= RESOURCESROOT ?>/.assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= RESOURCESROOT ?>/.assets/custom.css" rel="stylesheet">
+
+    <title>Hello, world!</title>
+</head>
+<body>
+
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="<?= WEBROOT ?>/"
+           class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <img src="<?= RESOURCESROOT ?>/.assets/images/HSFL_Icon.png" height="32px" alt="Logo">
+            <span class="fs-4">Company</span>
+        </a>
+        <ul class="nav nav-pills">
+			<?php
+			foreach ($nav as $navItem) {
+				echo '<li class="nav-item"><a href="' . WEBROOT . '/' . $navItem[1] . '/" class="nav-link">' . $navItem[0] . '</a></li>';
+			}
+			?>
+        </ul>
+    </header>
+    <main>
+        <h1><?php echo htmlspecialchars($news->title) ?></h1>
+
+<hr class="mt-2 mb-4">
+<img class="img-fluid rounded mx-auto d-block mb-4" alt="image" src="{{ news.image | image }}">
+<p class="text-end"><strong>{{ news.timestamp | date("d.m.Y") }}</strong></p>
+<p>{{ news.text }}</p>
+<hr class="">
+<div class="row position-relative">
+    <a href="{{ constant('WEBROOT') }}/users/{{ news.author.id }}/" class="stretched-link"></a>
+    <div class="col-1">
+        <img class="img-user rounded-circle" alt="image"
+             src="{{ news.author.image | image }}">
+    </div>
+    <div class="col-11">
+        <h4 class=" mt-2">{{ news.author.name }}</h4>
+        <p class="mb-0">{{ news.author.department }}</p>
+    </div>
+    </main>
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <span class="text-muted">© 2021 Company, Inc</span>
+        </div>
+        <script src="<?= RESOURCESROOT ?>/.assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    </footer>
+</div>
+</body>
+</html><?php

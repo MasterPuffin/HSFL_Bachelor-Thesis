@@ -5,11 +5,15 @@
             "Bluhm\\BaPesto\\": "src/"
         }
     },
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Johannes",
             "email": "johannes.bluhm@outlook.com"
         }
     ],
-    "require": {}
+    "require": {
+        "masterpuffin/pesto": "dev-main",
+        "masterpuffin/sql": "dev-main"
+    }
 }

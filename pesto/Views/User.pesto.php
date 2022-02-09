@@ -6,9 +6,9 @@
 
 #Block(main)
 <?php
-$request=getRequestArr();
+$request = getRequestArr();
 $user = new \User($request[1]);
-$userNews =\News::getForUser($request[1])
+$userNews = \News::getForUser($request[1])
 ?>
 <h1>{{ $user->name }}</h1>
 <hr class="mt-2 mb-4">
@@ -23,13 +23,15 @@ $userNews =\News::getForUser($request[1])
     </div>
     <div class="col-6">
         <img class="img-fluid rounded mx-auto d-block mb-4" alt="image"
-             src="{{ $user->image }}">
+             src="{{ resolveImage($user->image) }}">
     </div>
     <hr class="mt-2 mb-4">
     <h3 class="mb-4">Letzte News</h3>
 	<?php
 	foreach ($userNews as $news) {
-		echo '<NewsGridItem @image="' . $news->image . '" @title="' . $news->title . '"  @id="' . $news->id . '" @text="' . $news->text . '"></NewsGridItem>';
+		?>
+        <NewsGridItem @image="<?= $news->image ?>" @id="<?= $news->id ?>" @text="<?= $news->text ?>" @title="<?= $news->title ?>"></NewsGridItem>
+		<?php
 	}
 	?>
 </div>

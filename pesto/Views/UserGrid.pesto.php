@@ -19,7 +19,7 @@ foreach ($departments as $department) {
             ?>
             <div class="col-md-3 mb-4">
                 <div class="card ">
-                    <img src="{{ $user->image }}" class="card-img-top" alt="Image">
+                    <img src="{{ resolveImage($user->image) }}" class="card-img-top" alt="Image">
                     <div class="card-body">
                         <h5 class="card-title">{{ $user->name }}</h5>
                         <p class="card-text">

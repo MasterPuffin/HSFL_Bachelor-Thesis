@@ -25,7 +25,6 @@
 		<?php
 		foreach (\News::getAll(4) as $news) {
 			?>
-
             <NewsGridItem @image="<?= $news->image ?>" @id="<?= $news->id ?>" @text="<?= $news->text ?>" @title="<?= $news->title ?>"></NewsGridItem>
 			<?php
 		}

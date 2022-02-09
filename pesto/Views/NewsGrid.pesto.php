@@ -10,7 +10,9 @@
 <div class="row">
 	<?php
 	foreach (\News::getAll() as $news) {
-		echo '<NewsGridItem @image="' . $news->image . '" @title="' . $news->title . '"  @id="' . $news->id . '" @text="' . $news->text . '"></NewsGridItem>';
+		?>
+        <NewsGridItem @image="<?= $news->image ?>" @id="<?= $news->id ?>" @text="<?= $news->text ?>" @title="<?= $news->title ?>"></NewsGridItem>
+		<?php
 	}
 	?>
 </div>

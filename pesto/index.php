@@ -3,8 +3,7 @@ require 'require.php';
 
 
 $p = new Pesto(__DIR__ . "/");
-$p->enableCaching = false;
-$p->writeResultToCache=true;
+$p->enableCaching = true;
 
 $request = getRequestArr();
 

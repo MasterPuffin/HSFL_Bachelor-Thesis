@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-const WEBROOT = "/twig2";
+const WEBROOT = "/twig";
 const RESOURCESROOT = "";
 
 //Require composer
@@ -26,4 +26,5 @@ spl_autoload_register(function ($className) {
 });
 
 //Init mysql
-$mysqli = SQL::init("localhost", "hsfl_ba");
+//$sql = SQL::init("localhost", "hsfl_ba", "root", "", true);
+$sql = SQL::init("localhost", "hsfl_ba-large", "root", "", true);

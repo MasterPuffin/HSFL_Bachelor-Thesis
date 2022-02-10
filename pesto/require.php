@@ -26,4 +26,5 @@ spl_autoload_register(function ($className) {
 });
 
 //Init mysql
-$mysqli = SQL::init("localhost", "hsfl_ba");
+$sql = SQL::init("localhost", "hsfl_ba", "root", "", true);
+#$sql = SQL::init("localhost", "hsfl_ba-large", "root", "", true);

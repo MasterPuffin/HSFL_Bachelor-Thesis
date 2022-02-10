@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MasterPuffin/Pesto.git",
-                "reference": "9e702800e4802d8616253afa694f2b3561894b2b"
+                "reference": "13d5f0f585698d8aee0bd29baa511cef451aab8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MasterPuffin/Pesto/zipball/9e702800e4802d8616253afa694f2b3561894b2b",
-                "reference": "9e702800e4802d8616253afa694f2b3561894b2b",
+                "url": "https://api.github.com/repos/MasterPuffin/Pesto/zipball/13d5f0f585698d8aee0bd29baa511cef451aab8a",
+                "reference": "13d5f0f585698d8aee0bd29baa511cef451aab8a",
                 "shasum": ""
             },
             "require": {
@@ -45,7 +45,7 @@
                 "issues": "https://github.com/MasterPuffin/Pesto/issues",
                 "source": "https://github.com/MasterPuffin/Pesto/tree/main"
             },
-            "time": "2022-02-09T15:25:52+00:00"
+            "time": "2022-02-10T13:04:27+00:00"
         },
         {
             "name": "masterpuffin/sql",
@@ -53,12 +53,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MasterPuffin/SQL.git",
-                "reference": "fb33a14643b196b81edff22a3c14658fd8dc3354"
+                "reference": "a7d3d131d0af7eb6eb510d15cf3b0c54f2831d9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MasterPuffin/SQL/zipball/fb33a14643b196b81edff22a3c14658fd8dc3354",
-                "reference": "fb33a14643b196b81edff22a3c14658fd8dc3354",
+                "url": "https://api.github.com/repos/MasterPuffin/SQL/zipball/a7d3d131d0af7eb6eb510d15cf3b0c54f2831d9f",
+                "reference": "a7d3d131d0af7eb6eb510d15cf3b0c54f2831d9f",
                 "shasum": ""
             },
             "require": {
@@ -87,7 +87,7 @@
                 "issues": "https://github.com/MasterPuffin/SQL/issues",
                 "source": "https://github.com/MasterPuffin/SQL/tree/main"
             },
-            "time": "2022-01-14T16:24:04+00:00"
+            "time": "2022-02-10T14:01:33+00:00"
         }
     ],
     "packages-dev": [],

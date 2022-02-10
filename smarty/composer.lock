@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MasterPuffin/SQL.git",
-                "reference": "fb33a14643b196b81edff22a3c14658fd8dc3354"
+                "reference": "a7d3d131d0af7eb6eb510d15cf3b0c54f2831d9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MasterPuffin/SQL/zipball/fb33a14643b196b81edff22a3c14658fd8dc3354",
-                "reference": "fb33a14643b196b81edff22a3c14658fd8dc3354",
+                "url": "https://api.github.com/repos/MasterPuffin/SQL/zipball/a7d3d131d0af7eb6eb510d15cf3b0c54f2831d9f",
+                "reference": "a7d3d131d0af7eb6eb510d15cf3b0c54f2831d9f",
                 "shasum": ""
             },
             "require": {
@@ -46,20 +46,20 @@
                 "issues": "https://github.com/MasterPuffin/SQL/issues",
                 "source": "https://github.com/MasterPuffin/SQL/tree/main"
             },
-            "time": "2022-01-14T16:24:04+00:00"
+            "time": "2022-02-10T14:01:33+00:00"
         },
         {
             "name": "smarty/smarty",
-            "version": "v4.0.3",
+            "version": "v4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "f707dadecbc145bac40f77f47595f32ec18eed01"
+                "reference": "9e0536de18b53ba193364291ef0303b0ab9903e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/f707dadecbc145bac40f77f47595f32ec18eed01",
-                "reference": "f707dadecbc145bac40f77f47595f32ec18eed01",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/9e0536de18b53ba193364291ef0303b0ab9903e1",
+                "reference": "9e0536de18b53ba193364291ef0303b0ab9903e1",
                 "shasum": ""
             },
             "require": {
@@ -110,9 +110,9 @@
             "support": {
                 "forum": "https://github.com/smarty-php/smarty/discussions",
                 "issues": "https://github.com/smarty-php/smarty/issues",
-                "source": "https://github.com/smarty-php/smarty/tree/v4.0.3"
+                "source": "https://github.com/smarty-php/smarty/tree/v4.1.0"
             },
-            "time": "2022-01-10T09:52:14+00:00"
+            "time": "2022-02-06T20:34:27+00:00"
         }
     ],
     "packages-dev": [],

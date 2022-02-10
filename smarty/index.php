@@ -12,6 +12,7 @@ $nav = [
 
 $smarty = new Smarty();
 $smarty->assign('nav', $nav);
+$smarty->caching = true;
 
 $smarty->registerPlugin("modifier", "image", "resolveImage", false);
 

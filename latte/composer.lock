@@ -96,12 +96,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MasterPuffin/SQL.git",
-                "reference": "fb33a14643b196b81edff22a3c14658fd8dc3354"
+                "reference": "a7d3d131d0af7eb6eb510d15cf3b0c54f2831d9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MasterPuffin/SQL/zipball/fb33a14643b196b81edff22a3c14658fd8dc3354",
-                "reference": "fb33a14643b196b81edff22a3c14658fd8dc3354",
+                "url": "https://api.github.com/repos/MasterPuffin/SQL/zipball/a7d3d131d0af7eb6eb510d15cf3b0c54f2831d9f",
+                "reference": "a7d3d131d0af7eb6eb510d15cf3b0c54f2831d9f",
                 "shasum": ""
             },
             "require": {
@@ -130,7 +130,7 @@
                 "issues": "https://github.com/MasterPuffin/SQL/issues",
                 "source": "https://github.com/MasterPuffin/SQL/tree/main"
             },
-            "time": "2022-01-14T16:24:04+00:00"
+            "time": "2022-02-10T14:01:33+00:00"
         },
         {
             "name": "nette/utils",

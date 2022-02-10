@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MasterPuffin/SQL.git",
-                "reference": "fb33a14643b196b81edff22a3c14658fd8dc3354"
+                "reference": "a7d3d131d0af7eb6eb510d15cf3b0c54f2831d9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MasterPuffin/SQL/zipball/fb33a14643b196b81edff22a3c14658fd8dc3354",
-                "reference": "fb33a14643b196b81edff22a3c14658fd8dc3354",
+                "url": "https://api.github.com/repos/MasterPuffin/SQL/zipball/a7d3d131d0af7eb6eb510d15cf3b0c54f2831d9f",
+                "reference": "a7d3d131d0af7eb6eb510d15cf3b0c54f2831d9f",
                 "shasum": ""
             },
             "require": {
@@ -46,20 +46,20 @@
                 "issues": "https://github.com/MasterPuffin/SQL/issues",
                 "source": "https://github.com/MasterPuffin/SQL/tree/main"
             },
-            "time": "2022-01-14T16:24:04+00:00"
+            "time": "2022-02-10T14:01:33+00:00"
         },
         {
             "name": "mustache/mustache",
-            "version": "v2.14.0",
+            "version": "v2.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/mustache.php.git",
-                "reference": "4e2724dd40ae9499a55e7db7df82665be0ab7e34"
+                "reference": "579ffa5c96e1d292c060b3dd62811ff01ad8c24e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/4e2724dd40ae9499a55e7db7df82665be0ab7e34",
-                "reference": "4e2724dd40ae9499a55e7db7df82665be0ab7e34",
+                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/579ffa5c96e1d292c060b3dd62811ff01ad8c24e",
+                "reference": "579ffa5c96e1d292c060b3dd62811ff01ad8c24e",
                 "shasum": ""
             },
             "require": {
@@ -94,9 +94,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/mustache.php/issues",
-                "source": "https://github.com/bobthecow/mustache.php/tree/v2.14.0"
+                "source": "https://github.com/bobthecow/mustache.php/tree/v2.14.1"
             },
-            "time": "2021-12-14T14:42:17+00:00"
+            "time": "2022-01-21T06:08:36+00:00"
         }
     ],
     "packages-dev": [],

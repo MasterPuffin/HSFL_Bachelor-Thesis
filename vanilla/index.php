@@ -1,15 +1,6 @@
 <?php
 
-
-
 require 'require.php';
-/*
-echo "Hello World";
-$klaus = new User();
-print_r($klaus);
-$test = SQL::select("SELECT * FROM test WHERE 1");
-print_r($test);
-*/
 
 //Explode Request to array and remove empty entries
 $request = array_diff(explode("/", $_SERVER['REQUEST_URI']), [""]);
@@ -21,10 +12,6 @@ if (in_array($request[0], ["vanilla", "blade_laravel", "blade_standalone", "latt
 	unset($request[0]);
 	sort($request, SORT_NUMERIC);
 }
-
-
-
-//devPrint($request);
 
 //Redirect to home page when accessing /
 if (!isset($request[0])) {
@@ -48,4 +35,3 @@ switch ($request[0]) {
 		\Views\Error::page();
 		break;
 }
-?>
